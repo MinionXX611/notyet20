@@ -1,6 +1,6 @@
 // https://github.com/shikijs/shiki/tree/main/packages/transformers
 
-import type { Element, Text } from 'hast'
+import type { Element, Text } from '@types/hast'
 import type { ShikiTransformer, ShikiTransformerContext } from 'shiki'
 
 interface TransformerNotationMapOptions {
@@ -37,7 +37,7 @@ function createCommentNotationTransformer(
           if (text.type !== 'text') continue
 
           let replaced = false
-          text.value = text.value.replace(regex, (...match) => {
+          text.value = text.value.replace(regex, (...match: string[]) => {
             if (onMatch.call(this, match, line, child, lines, idx)) {
               replaced = true
               return ''

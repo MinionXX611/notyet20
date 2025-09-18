@@ -1,4 +1,4 @@
-import type { Element, ElementContent, Root } from 'hast'
+import type { Element, ElementContent, Root } from '@types/hast'
 import { visit } from 'unist-util-visit'
 
 const headingRank = (tag: string) => /^h[1-6]$/.test(tag)
